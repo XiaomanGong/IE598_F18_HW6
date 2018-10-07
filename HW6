@@ -31,7 +31,7 @@ for i in range(1,11):
     print("For random state :",i,",in-sample score =",("%.4f"%score_in),
           ", out-of-sample score =", ("%.4f"%score_out))
 
-print("in-sample set : mean=", np.mean(in_sample_scores),", std=",np.std(in_sample_scores),'\n')
+print("in-sample set : mean=", np.mean(in_sample_scores),", std=",np.std(in_sample_scores))
 print("out-of-sample set : mean=", np.mean(out_sample_scores),
       ", std=",np.std(out_sample_scores),'\n')
 
@@ -46,11 +46,11 @@ cv_score=cross_val_score(estimator=dt,X=X_train,y=y_train,cv=10,n_jobs=1)
 
 
 y_pred_test=dt.predict(X_test)
-out_score=accuracy_score(y_test,y_pred_test)
+out_score=metrics.accuracy_score(y_test,y_pred_test)
 
-print("CV accuracy scores:", cv_score,'\n')
-print("CV mean:",np.mean(cv_score),", std:", np.std(cv_score),'\n')
-print("Out of sample score:", out_score )
+print("CV accuracy scores:", cv_score)
+print("CV mean:",np.mean(cv_score),", std:", np.std(cv_score),)
+print("Out of sample score:", out_score,'\n')
     
 
 print("My name is Xiaoman Gong")
